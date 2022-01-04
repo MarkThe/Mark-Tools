@@ -53,11 +53,11 @@ def search_for_updates():
                         if "releases/download" in str(link):
                             update_url = f"https://github.com/{link.get('href')}"
                     new_version = requests.get(update_url)
-                    with open("Mark.zip", 'wb')as zipfile:
+                    with open("Mark-Tools-master.zip", 'wb')as zipfile:
                         zipfile.write(new_version.content)
-                    with ZipFile("Mark.zip", 'r') as filezip:
+                    with ZipFile("Mark-Tools-master.zip", 'r') as filezip:
                         filezip.extractall()
-                    os.remove("Mark.zip")
+                    os.remove("Mark-Tools-master.zip")
                     cwd = os.getcwd()+'\\Mark\\'
                     shutil.copyfile(cwd+'Changelog.md', 'Changelog.md')
                     shutil.copyfile(cwd+'Mark.exe', 'Mark.exe')
@@ -70,7 +70,7 @@ def search_for_updates():
                     exit()
                 except PermissionError as err:
                     clear()
-                    print(f"{Fore.LIGHTRED_EX}\nMark Nuker-{THIS_VERSION} doesn't have enough permission to update\ntry re-running again as admin or turn off anti-virus otherwise try and download it manually here {update_url}\n\n\"{err}\"")
+                    print(f"{Fore.LIGHTRED_EX}\nMark Tool-{THIS_VERSION} doesn't have enough permission to update\ntry re-running again as admin or turn off anti-virus otherwise try and download it manually here {update_url}\n\n\"{err}\"")
                     sleep(10)
             
             else:
