@@ -48,7 +48,7 @@ def search_for_updates():
             #if they are running Mark.exe
             if psutil.Process(os.getpid()).name() == 'Mark.exe':
                 try:
-                    soup = BeautifulSoup(requests.get("https://github.com/Rdimo/Hazard-Nuker/releases", headers=header).text, 'html.parser')
+                    soup = BeautifulSoup(requests.get("https://github.com/Mark-Tools/releases", headers=header).text, 'html.parser')
                     for link in soup.find_all('a'):
                         if "releases/download" in str(link):
                             update_url = f"https://github.com/{link.get('href')}"
