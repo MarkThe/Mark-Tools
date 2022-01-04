@@ -18,7 +18,7 @@ def search_for_updates():
         "X-Requested-With": "XMLHttpRequest"
     }
     clear()
-    setTitle("Hazard Nuker Checking For Updates. . .")
+    setTitle("Mark-Tool Checking For Updates. . .")
     for i in tqdm(range(100),
                     desc="Searching for updates. . .",
                     ascii=False, ncols=100):
