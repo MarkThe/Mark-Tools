@@ -310,7 +310,7 @@ def main():
             main() 
 
 
-    elif choice == '14':
+    elif choice == '15':
         print(f'''
     {Fore.RESET}[{Fore.RED}1{Fore.RESET}] Webhook Deleter
     {Fore.RESET}[{Fore.RED}2{Fore.RESET}] Webhook Spammer    
@@ -368,7 +368,7 @@ def main():
             util.webhookspammer.WebhookSpammer(WebHook, Message, Timer)
 
 
-    elif choice == '15':
+    elif choice == '16':
         setTitle("Exiting...")
         choice = str(input(
             f'{Fore.GREEN}[{Fore.CYAN}>>>{Fore.GREEN}] {Fore.RESET}Are you sure you want to exit? (Y to confirm): {Fore.LIGHTRED_EX}'))
