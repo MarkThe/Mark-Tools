@@ -63,28 +63,28 @@ def search_for_updates():
                     shutil.copyfile(cwd+'Mark.exe', 'Mark.exe')
                     shutil.copyfile(cwd+'README.md', 'README.md')                   
                     shutil.rmtree('Mark')
-                    setTitle('Hazard Nuker Update Complete!')
+                    setTitle('Mark-Tool Update Complete!')
                     print(f"{Fore.GREEN}Update Successfully Finished!{Fore.RESET}")
                     sleep(1)
                     os.startfile("Mark.exe")
                     exit()
                 except PermissionError as err:
                     clear()
-                    print(f"{Fore.LIGHTRED_EX}\nHazard Nuker-{THIS_VERSION} doesn't have enough permission to update\ntry re-running again as admin or turn off anti-virus otherwise try and download it manually here {update_url}\n\n\"{err}\"")
+                    print(f"{Fore.LIGHTRED_EX}\nMark Nuker-{THIS_VERSION} doesn't have enough permission to update\ntry re-running again as admin or turn off anti-virus otherwise try and download it manually here {update_url}\n\n\"{err}\"")
                     sleep(10)
-            #if they are running hazard source code
+            
             else:
                 try:
-                    new_version = requests.get("https://github.com/MarkThe/Mark-Tools/archive/refs/heads/master.zip")
-                    with open("MarkThe/Mark-Tools-master.zip", 'wb')as zipfile:
+                    new_version = requests.get("https://github.com/MarkThe/Mark-Tools/archive/refs/heads/main.zip")
+                    with open("MarkThe/Mark-Tools-main.zip", 'wb')as zipfile:
                         zipfile.write(new_version.content)
                     with ZipFile("MarkThe/Mark-Tools-master.zip", 'r') as filezip:
                         filezip.extractall()
-                    os.remove("MarkThe/Mark-Tools-master.zip")
+                    os.remove("MarkThe/Mark-Tools-main.zip")
                     cwd = os.getcwd()+'\\MarkThe/Mark-Tools-master'
                     shutil.copytree(cwd, os.getcwd(), dirs_exist_ok=True)
                     shutil.rmtree(cwd)
-                    setTitle('MarkThe/Mark-Tools Update Complete!')
+                    setTitle('Mark-Tools Update Complete!')
                     print(f"{Fore.GREEN}Update Successfully Finished!{Fore.RESET}")
                     sleep(1)
                     os.startfile("run.bat")
